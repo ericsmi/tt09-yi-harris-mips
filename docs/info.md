@@ -9,7 +9,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This is the example processor core from Weste & Harris written by Max Yi (byyi@hmc.edu) and David_Harris@hmc.edu 12/9/03
+https://pages.hmc.edu/harris/cmosvlsi/4e/code/mips.tar.gz
 
 ## How to test
 
