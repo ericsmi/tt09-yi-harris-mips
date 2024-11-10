@@ -448,7 +448,7 @@ mips mips
      .memdata(ui_in[7:0]), 
      .memread(uio_out[7]), 
      .memwrite(uio_out[6]), 
-     .adr(uio_out[5:0]), 
+     .adr({2'b00,uio_out[5:0]}), 
      .writedata(uo_out[7:0]));
 
   
