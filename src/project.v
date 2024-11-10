@@ -23,7 +23,8 @@ module mips #(parameter WIDTH = 8, REGBITS = 3)
              (input  logic             clk, reset, 
               input  logic [WIDTH-1:0] memdata, 
               output logic             memread, memwrite, 
-              output logic [WIDTH-1:0] adr, writedata);
+              output logic [WIDTH-1:0] adr, 
+              output logic [WIDTH-1:0] writedata);
 
    logic [31:0] instr;
    logic        zero, alusrca, memtoreg, iord, pcen, regwrite, regdst;
@@ -441,7 +442,8 @@ module tt_um_ericsmi_mips (
 
   // All output pins must be assigned. If not used, assign to 0.
 
-  wire addr[7:0];
+  wire [7:0] addr;
+  
   assign uio_oe[7:0]  = 8'hFF;
   assign uio_out[5:0] = addr[5:0];
   
