@@ -443,12 +443,14 @@ module tt_um_ericsmi_mips (
 
     assign uio_oe[7:0]  = {8{1}};
 
+  wire w[1:0];
+  
 mips mips 
     (.clk(clk), .reset(~rst_n), 
      .memdata(ui_in[7:0]), 
      .memread(uio_out[7]), 
      .memwrite(uio_out[6]), 
-     .adr({2'b00,uio_out[5:0]}), 
+     .adr({w[1:0],uio_out[5:0]}), 
      .writedata(uo_out[7:0]));
 
   
