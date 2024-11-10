@@ -5,6 +5,20 @@
 
 `default_nettype none
 
+  typedef enum logic [3:0] {FETCH1 = 4'b0000, FETCH2, FETCH3, FETCH4,
+                            DECODE, MEMADR, LBRD, LBWR, SBWR,
+                            RTYPEEX, RTYPEWR, BEQEX, JEX} statetype;
+  typedef enum logic [5:0] {LB    = 6'b100000,
+                            SB    = 6'b101000,
+                            RTYPE = 6'b000000,
+                            BEQ   = 6'b000100,
+                            J     = 6'b000010} opcode;
+  typedef enum logic [5:0] {ADD = 6'b100000,
+                            SUB = 6'b100010,
+                            AND = 6'b100100,
+                            OR  = 6'b100101,
+                            SLT = 6'b101010} functcode;
+
 module mips #(parameter WIDTH = 8, REGBITS = 3)
              (input  logic             clk, reset, 
               input  logic [WIDTH-1:0] memdata, 
