@@ -441,7 +441,7 @@ module tt_um_ericsmi_mips (
 
   // All output pins must be assigned. If not used, assign to 0.
 
-    assign uio_oe[7:0]  = {8{1}};
+  assign uio_oe[7:0]  = {8{1'b1}};
 
   wire w[1:0];
   
