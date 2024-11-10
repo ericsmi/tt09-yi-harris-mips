@@ -441,16 +441,17 @@ module tt_um_ericsmi_mips (
 
   // All output pins must be assigned. If not used, assign to 0.
 
-  assign uio_oe[7:0]  = {8{1'b1}};
-
-  wire w[1:0];
+  wire addr[7:0];
+  assign uio_oe[7:0]  = 8'hFF;
+  assign uio_out[5:0] = addr[5:0];
   
+
 mips mips 
     (.clk(clk), .reset(~rst_n), 
      .memdata(ui_in[7:0]), 
      .memread(uio_out[7]), 
      .memwrite(uio_out[6]), 
-     .adr({w[1:0],uio_out[5:0]}), 
+     .adr(addr[7:0]), 
      .writedata(uo_out[7:0]));
 
   
